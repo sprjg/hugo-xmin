@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial "seo_schema" . }}
+
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
@@ -10,6 +12,8 @@
   </head>
 
   <body>
+    <div class='site-title'> <div> {{ .Site.Title }} </div> </div>
+    <div id="posts-list">
     <nav>
     <ul class="menu">
       {{ range .Site.Menus.main }}
@@ -18,3 +22,4 @@
     </ul>
     <hr/>
     </nav>
+    </div>

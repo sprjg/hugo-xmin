@@ -1,12 +1,13 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
-<h1><span class="title">{{ .Title | markdownify }}</span></h1>
-{{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
-{{ if (gt .Params.date 0) }}<h2 class="date">{{ .Date.Format "2006/01/02" }}</h2>{{ end }}
+<a href="/posts" style="text-decoration:none;color:black;"><h1><span class="title">{{ .Title | markdownify }}</span></h1></a>
 </div>
 
 <main>
-{{ .Content }}
+    <aside class="toc">
+        {{ .TableOfContents }}
+    </aside>
+    {{ .Content }}
 </main>
 
 {{ partial "footer.html" . }}
