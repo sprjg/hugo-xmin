@@ -4,10 +4,33 @@
 </div>
 
 <main>
-    <aside class="toc">
-        {{ .TableOfContents }}
-    </aside>
-    {{ .Content }}
+  <aside class="toc">
+    {{ .TableOfContents }}
+  </aside>
+  {{ .Description }}
+  {{ .Content }}
 </main>
+
+<div class="related-content">
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<h3>See Also</h3>
+<ul>
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}
+</div>
+
+<script src="https://utteranc.es/client.js"
+        repo="sprjg/sprjg.github.io"
+        issue-term="title"
+        label="blog-comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 
 {{ partial "footer.html" . }}

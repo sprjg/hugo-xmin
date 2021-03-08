@@ -1,3 +1,25 @@
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<meta property="og:title" content="{{ .Title }}" />
+
+<meta property="og:image" content="{{ .Site.Params.image_loc }}/{{ .Params.og_image }}" />
+
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}" />
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="twitter:title" content="{{ .Title }}" />
+
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}" />
+
+<meta name="twitter:image" content="{{ .Site.Params.image_loc }}/{{ .Params.og_image }}" />
+
 <script type="application/ld+json">
 {
     "@context" : "http://schema.org",
